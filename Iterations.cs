@@ -26,7 +26,8 @@ namespace DotnetIteration
         //
         public static IEnumerable<string> Yelling(List<string> words)
         {
-            throw new System.NotImplementedException();
+            var wordList = words.Select(c => c.ToUpper());
+            return wordList;
         }
 
 
@@ -37,7 +38,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var numberList = numbers.Select(dub => dub * 2);
+            return numberList;
         }
 
 
@@ -49,8 +51,11 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> StringyIndexes(List<string> data)
         {
-            throw new System.NotImplementedException();
-        }
+            var newList = data.Select((stringy, index) => "{stringy} ia at {index}");
+        
+           return newList;
+        }   
+        
 
 
         // 
@@ -59,7 +64,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenSurvive(List<int> data)
         {
-            throw new System.NotImplementedException();
+            var theEvens = data.Where((number => number % 2 == 0));
+            return theEvens; 
         }
 
 
@@ -70,7 +76,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> data)
         {
-            throw new System.NotImplementedException();
+            var evenDex = data.FindIndex((x => x % 2 == 0));
+            yield return evenDex;
         }
 
 
@@ -121,7 +128,8 @@ namespace DotnetIteration
         // 
         public static int FindTheNeedleIndex(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var findex = data.FindIndex(needles => needles.Contains("needles"));
+            return findex;
         }
 
 
@@ -132,7 +140,8 @@ namespace DotnetIteration
         // 
         public static bool SomeoneToLove(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var love = data.Any(oneString => oneString.Length == 4);
+            return love;
         }
     }
 }
